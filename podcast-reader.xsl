@@ -23,7 +23,8 @@
           <article id="{guid}">
             <h2>Episode <xsl:value-of select="itunes:episode" />: <xsl:value-of select="title" /></h2>
             <p><xsl:value-of select="pubDate" /></p>
-            <p><a href="{enclosure/@url}">Listen</a></p>
+            <p><audio controls="" src="{enclosure/@url}"></audio></p>
+            <p><a href="\">Download</a></p>
             <p><xsl:value-of select="description" /></p>
           </article>
         </xsl:for-each>
