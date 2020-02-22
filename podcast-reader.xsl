@@ -10,15 +10,20 @@
 >
   <xsl:output method="html" />
   <xsl:template match="/">
+    <main>
     <xsl:for-each select="rss/channel">
       <section>
-        <h1><xsl:value-of select="title" /></h1>
-        <div>
-          <img width="100" src="{image/url}" alt="{image/title}" />
-        </div>
-        <p><xsl:value-of select="description" /></p>
-        <p><xsl:value-of select="copyright" /></p>
-        <p>by <xsl:value-of select="itunes:author" /></p>
+        <header>
+          <h1><xsl:value-of select="title" /></h1>
+          <figure>
+            <img width="100" src="{image/url}" alt="{image/title}" />
+          </figure>
+          <p><xsl:value-of select="description" /></p>
+          <details>
+            <summary>By <xsl:value-of select="itunes:author" /></summary>.
+            <p><xsl:value-of select="copyright" /></p>
+          </details>
+        </header>
         <xsl:for-each select="item">
           <article id="{guid}">
             <h2>Episode <xsl:value-of select="itunes:episode" />: <xsl:value-of select="title" /></h2>
@@ -30,5 +35,6 @@
         </xsl:for-each>
       </section>
     </xsl:for-each>
+    </main>
   </xsl:template>
 </xsl:stylesheet>
