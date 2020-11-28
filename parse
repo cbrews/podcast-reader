@@ -2,4 +2,4 @@
 
 set -ex
 
-curl -s "$*" | xsltproc ./podcast-reader.xsl - > parsed.html
+curl -s "$*" | xsltproc ./podcast-reader.xsl -
