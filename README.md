@@ -1,9 +1,6 @@
 # podcast-reader
 
-Basic XSLT transformation for podcast consumption for humans.
+Basic XSLT transformation templates for podcast consumption for humans.
 
-Usage:
-
-```
-./parse <URL>
-```
+* rss_feed.xsl: full feed transformation
+* rss_feed_item.xsl: single entry extraction (using a template on the episode id)
